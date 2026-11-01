@@ -2,7 +2,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 
-[AYA](http://umeici.onjn.jp/) / [YAYA](https://github.com/ponapalt/yaya-shiori) の基本動作確認ツール、およびAYA / YAYA実行ログのリアルタイムビューアとして使用できます。  
+[AYA](http://umeici.onjn.jp/) / [YAYA](https://github.com/YAYA-shiori/yaya-shiori) の基本動作確認ツール、およびAYA / YAYA実行ログのリアルタイムビューアとして使用できます。  
 原作者：[umeici](http://umeici.onjn.jp/)  
 新機能を追加しました：  
 - ゴースト選択ui: 複数のゴーストが同時に動作している場合  
@@ -45,7 +45,7 @@ On_tamaExit{
 ```
 上級者向けのヒントも：  
 また、tamaのhwndを変数に保持し、shioriがリロードされた後に`SETTAMAHWND`を再コールすれば、ghostがtamaと連絡を取り続けることができるようになります  
-(この基礎となる機能は、[yayaの基礎となるdicの最新版](https://github.com/ponapalt/yaya-dic)で実装されています。)  
+(この基礎となる機能は、[yayaの基礎となるdicの最新版](https://github.com/YAYA-shiori/yaya-dic)で実装されています。)  
 ```c
 On_tamaOpen{
 	TamaHwnd=reference[0]

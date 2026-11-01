@@ -239,7 +239,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 		if(cds->dwData >= 0 && cds->dwData < F_NUMBER && receive) {
 			// メッセージ表示更新
 			if(cds->cbData > 0) {
-				const wstring_view logbuf{(wchar_t *)cds->lpData, (size_t)cds->cbData};
+				// cbDataはバイト数で、YAYAは終端のnull文字も含めて送ってくる
+				wstring_view logbuf{(wchar_t *)cds->lpData, (size_t)cds->cbData / sizeof(wchar_t)};
+				while(!logbuf.empty() && logbuf.back() == L'\0')
+					logbuf.remove_suffix(1);
 
 				WriteText(logbuf, cds->dwData);
 				

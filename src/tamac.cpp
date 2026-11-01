@@ -20,7 +20,7 @@
 #include <fcntl.h>
 #include <io.h>
 
-#include "my-gists/ukagaka/shiori_loader.cpp"
+#include "ukagaka/shiori_loader.cpp"
 
 // ログレベル定数（check-tool.cpp に合わせて統一）
 #define E_I       0   /* info */

@@ -1,7 +1,7 @@
 ﻿#define DONT_USE_SOCKET
 #include "my-gists/ukagaka/sstp.hpp"
 #include "my-gists/ukagaka/SFMO.hpp"
-#include "my-gists/ukagaka/shiori_loader.hpp"
+#include "ukagaka/shiori_loader.hpp"
 
 void CshioriErrorHandler(Cshiori::Error);
 void CshioriWarningHandler(Cshiori::Warning);

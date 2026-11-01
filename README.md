@@ -9,7 +9,7 @@ _____
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 
-Tama can be used as a basic operation check tool for [AYA](http://umeici.onjn.jp/) / [YAYA](https://github.com/ponapalt/yaya-shiori) and as a real-time viewer of AYA / YAYA execution logs.  
+Tama can be used as a basic operation check tool for [AYA](http://umeici.onjn.jp/) / [YAYA](https://github.com/YAYA-shiori/yaya-shiori) and as a real-time viewer of AYA / YAYA execution logs.  
 Originally written by [umeici](http://umeici.onjn.jp/)  
 New features:  
 - Ghost selection ui: when there are multiple ghosts running at the same time  
@@ -52,7 +52,7 @@ On_tamaExit{
 ```
 Some advanced tips:  
 You can also keep tama's hwnd in a variable and re-call `SETTAMAHWND` after the shiori has been reloaded to keep ghost in touch with tama  
-(This underlying functionality has been implemented in the [latest version of yaya's underlying dic](https://github.com/ponapalt/yaya-dic))  
+(This underlying functionality has been implemented in the [latest version of yaya's underlying dic](https://github.com/YAYA-shiori/yaya-dic))  
 ```c
 On_tamaOpen{
 	TamaHwnd=reference[0]
