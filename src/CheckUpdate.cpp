@@ -8,8 +8,8 @@
 #include <wininet.h>
 #pragma comment(lib, "WinInet.lib")
 
-//check update at https://github.com/YAYA-shiori/tama/releases with windows api
-//if has update,open https://github.com/YAYA-shiori/tama/releases/latest
+//check update at https://github.com/ukagaka-irono/tama-v6/releases with windows api
+//if has update,open the distribution page https://ukagaka-irono.github.io/tama-v6/
 void CheckUpdate() {
 	#ifndef _DEBUG
 	using namespace std;
@@ -24,7 +24,7 @@ void CheckUpdate() {
 			InternetCloseHandle(hInternet);
 			return;
 		}
-		HINTERNET hRequest = HttpOpenRequest(hConnect, L"GET", L"/repos/YAYA-shiori/tama/releases/latest", NULL, NULL, NULL, INTERNET_FLAG_SECURE, 0);
+		HINTERNET hRequest = HttpOpenRequest(hConnect, L"GET", L"/repos/ukagaka-irono/tama-v6/releases/latest", NULL, NULL, NULL, INTERNET_FLAG_SECURE, 0);
 		if(hRequest == NULL) {
 			InternetCloseHandle(hConnect);
 			InternetCloseHandle(hInternet);
@@ -59,6 +59,6 @@ void CheckUpdate() {
 	if(tagname == U8_VERSION_STRING_FOR_TAG_CHECK)
 		return;
 	if(MessageBox(NULL, LoadCStringFromResource(IDS_NEW_VERSION_AVAILABLE), L"Tama", MB_YESNO) == IDYES)
-		ShellExecute(NULL, L"open", L"https://github.com/YAYA-shiori/tama/releases/latest", NULL, NULL, SW_SHOW);
+		ShellExecute(NULL, L"open", L"https://ukagaka-irono.github.io/tama-v6/", NULL, NULL, SW_SHOW);
 	#endif
 }
