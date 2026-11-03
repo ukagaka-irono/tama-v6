@@ -56,6 +56,8 @@ struct SFface {
 inline HINSTANCE	  hInst;												 // インスタンス
 inline HWND			  hWnd, hDlgWnd;										 // ウィンドウハンドル、ダイヤログウィンドウハンドル
 inline HWND			  hEdit;												 // リッチエディットコントロールのハンドル
+inline HWND			  hFindDlg = NULL;										 // 検索ダイヤログのハンドル
+inline UINT			  FindMsg  = 0;											 // 検索ダイヤログからの通知メッセージ
 inline wstring		  szTitle;												 // キャプション
 inline const wchar_t *szWindowClass = CHECK_TOOL_WCNAME;					 // ウィンドウクラス名
 inline SFShape		  fontshape[F_NUMBER];									 // フォントシェープ

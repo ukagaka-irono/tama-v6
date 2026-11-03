@@ -128,6 +128,8 @@ int APIENTRY WinMain(
 		ghost_status_watcher = SetTimer(hWnd, IDT_CHOST_STATUS_WATCHER, 7000, (TIMERPROC)NULL);		  // 7-second interval & no timer callback
 	}
 	while(GetMessage(&msg, NULL, 0, 0)) {
+		if(hFindDlg && IsDialogMessageW(hFindDlg, &msg))
+			continue;
 		if(!TranslateAccelerator(msg.hwnd, hAccelTable, &msg)) {
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
@@ -206,6 +208,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 
 	static HINSTANCE hRtLib;
 
+	if(FindMsg && message == FindMsg) {
+		OnFindMsg((FINDREPLACEW *)lParam);
+		return 0;
+	}
 	switch(message) {
 	case WM_CTLCOLORDLG:
 		return (INT_PTR)DlgBrush;
@@ -224,7 +230,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 		hRtLib		  = LoadLibrary(L"RICHED32.DLL");
 		hEdit		  = CreateWindowEx(WS_EX_CLIENTEDGE, L"RICHEDIT", L"",
 									   WS_CHILD | WS_VISIBLE | WS_BORDER | ES_MULTILINE |
-										   WS_VSCROLL | WS_HSCROLL | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY,
+										   WS_VSCROLL | WS_HSCROLL | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | ES_NOHIDESEL,
 									   0, 0, 0, 0, hWnd, (HMENU)1, hInst, NULL);
 		const DWORD dwEvent = SendMessage(hEdit, EM_GETEVENTMASK, 0, 0) | ENM_KEYEVENTS | ENM_MOUSEEVENTS;
 		SendMessage(hEdit, EM_SETEVENTMASK, 0, (LPARAM)dwEvent);
@@ -331,6 +337,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 				EnableMenuItem(hSubMenu, ID_TAMA_DISABLE_AUTO_TRANSFER_SHIORI_OWNERSHIP, (!has_shiori_file_info) ? MF_DISABLED : MF_ENABLED);
 				TrackPopupMenu(hSubMenu, TPM_LEFTALIGN, pt.x, pt.y, 0, hWnd, NULL);
 				DestroyMenu(hMenu);
+			}
+			else if(pmf->msg == WM_KEYDOWN) {
+				// Ctrl+F: 検索、F3: 次を検索
+				if(pmf->wParam == 'F' && GetKeyState(VK_CONTROL) < 0)
+					ShowFindDialog();
+				else if(pmf->wParam == VK_F3)
+					FindNextInLog();
 			}
 			break;
 		}
@@ -463,6 +476,14 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
 		case ID_TAMA_COPY:
 			// クリップボードへコピー
 			SendMessage(hEdit, WM_COPY, 0, 0);
+			break;
+		case ID_TAMA_FIND:
+			// 検索
+			ShowFindDialog();
+			break;
+		case ID_TAMA_SAVELOG:
+			// ログをファイルに保存
+			SaveLogToFile();
 			break;
 		case ID_TAMA_EXIT:
 			// 終了

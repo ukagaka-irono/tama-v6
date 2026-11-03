@@ -24,6 +24,8 @@
 #define IDS_ERROR_SSP_RUNNING_TIMEOUT				   119
 #define IDS_SELF_IN_GHOST_DIR_ASK_IF_RUN_SSP		   120
 #define IDS_ERROR_ICON_NOT_FOUND					   121
+#define IDS_ERROR_SAVE_LOG_FAILED					   122
+#define IDS_FIND_NOT_FOUND						   123
 
 #define IDS_interface_load_not_found				   200
 #define IDS_interface_unload_not_found				   201
@@ -57,6 +59,8 @@
 #define ID_TAMA_RECEIVE								   32778
 #define ID_TAMA_ALERTONWARNING						   32779
 #define ID_TAMA_DISABLE_AUTO_TRANSFER_SHIORI_OWNERSHIP 32780
+#define ID_TAMA_FIND								   32781
+#define ID_TAMA_SAVELOG							   32782
 
 #define IDT_CHOST_STATUS_WATCHER					   13
 
@@ -65,7 +69,7 @@
 #ifdef APSTUDIO_INVOKED
 	#ifndef APSTUDIO_READONLY_SYMBOLS
 		#define _APS_NEXT_RESOURCE_VALUE 137
-		#define _APS_NEXT_COMMAND_VALUE	 32781
+		#define _APS_NEXT_COMMAND_VALUE	 32783
 		#define _APS_NEXT_CONTROL_VALUE	 1004
 		#define _APS_NEXT_SYMED_VALUE	 110
 	#endif

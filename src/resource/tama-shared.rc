@@ -21,6 +21,8 @@ BEGIN
         MENUITEM "最後の行へ移動(&B)",                 ID_TAMA_JUMPBOTTOM
         MENUITEM SEPARATOR
         MENUITEM "クリップボードにコピーする(&C)\tCtrl+C",   ID_TAMA_COPY
+        MENUITEM "検索(&F)\tCtrl+F",                  ID_TAMA_FIND
+        MENUITEM "ログをファイルに保存(&S)",              ID_TAMA_SAVELOG
         MENUITEM SEPARATOR
         MENUITEM "警告時のプロンプト(&W)",               ID_TAMA_ALERTONWARNING
         MENUITEM "ログ受信(&V)",                    ID_TAMA_RECEIVE
@@ -137,6 +139,8 @@ BEGIN
     IDS_SELF_IN_GHOST_DIR_ASK_IF_RUN_SSP 
                             "この玉はゴーストフォルダに入っています。\nゴーストを起動してリンクさせますか？"
 	IDS_ERROR_ICON_NOT_FOUND "アイコンが見つかりません："
+    IDS_ERROR_SAVE_LOG_FAILED "ログファイルの保存に失敗しました："
+    IDS_FIND_NOT_FOUND      "見つかりません："
 END
 
 STRINGTABLE
@@ -225,6 +229,8 @@ BEGIN
         MENUITEM "跳转到底部(&B)",                   ID_TAMA_JUMPBOTTOM
         MENUITEM SEPARATOR
         MENUITEM "复制到粘贴板(&C)\tCtrl+C",          ID_TAMA_COPY
+        MENUITEM "查找(&F)\tCtrl+F",                  ID_TAMA_FIND
+        MENUITEM "保存日志到文件(&S)",                ID_TAMA_SAVELOG
         MENUITEM SEPARATOR
         MENUITEM "警告时提示(&W)",                   ID_TAMA_ALERTONWARNING
         MENUITEM "日志接收(&V)",                    ID_TAMA_RECEIVE
@@ -339,6 +345,8 @@ BEGIN
     IDS_ERROR_SSP_RUNNING_TIMEOUT "启动SSP超时。"
     IDS_SELF_IN_GHOST_DIR_ASK_IF_RUN_SSP "此tama在一个ghost文件夹中\n运行所在ghost并链接？"
     IDS_ERROR_ICON_NOT_FOUND "未找到图标文件："
+    IDS_ERROR_SAVE_LOG_FAILED "保存日志文件失败："
+    IDS_FIND_NOT_FOUND      "找不到："
 END
 
 STRINGTABLE
@@ -379,6 +387,8 @@ BEGIN
         MENUITEM "jump to &Bottom",             ID_TAMA_JUMPBOTTOM
         MENUITEM SEPARATOR
         MENUITEM "&Copy to clipboard\tCtrl+C",  ID_TAMA_COPY
+        MENUITEM "&Find\tCtrl+F",                ID_TAMA_FIND
+        MENUITEM "&Save log to file",           ID_TAMA_SAVELOG
         MENUITEM SEPARATOR
         MENUITEM "Alert on &Warning",           ID_TAMA_ALERTONWARNING
         MENUITEM "recei&Ve",                    ID_TAMA_RECEIVE
@@ -491,6 +501,8 @@ BEGIN
     IDS_SELF_IN_GHOST_DIR_ASK_IF_RUN_SSP 
                             "This Tama is in a ghost folder.\nStart SSP with this ghost and link Tama?"
     IDS_ERROR_ICON_NOT_FOUND "Icon not found: "
+    IDS_ERROR_SAVE_LOG_FAILED "Failed to save log file: "
+    IDS_FIND_NOT_FOUND      "Not found: "
 END
 
 STRINGTABLE

@@ -10,4 +10,9 @@ bool SetMyBkColor(COLORREF col)noexcept;
 bool SetDlgFont(HWND hDlgEdit)noexcept;
 bool SetDlgBkColor(HWND hDlgEdit, COLORREF col)noexcept;
 
+void ShowFindDialog()noexcept;
+void FindNextInLog()noexcept;
+void OnFindMsg(const FINDREPLACEW *fr)noexcept;
+void SaveLogToFile()noexcept;
+
 int CALLBACK EnumFontFamExProc(const ENUMLOGFONTEX *lpelfe, NEWTEXTMETRICEX *lpntme, int nFontType, LPARAM lParam);
