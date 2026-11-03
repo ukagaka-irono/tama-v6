@@ -1,4 +1,5 @@
-[![download num](https://img.shields.io/github/downloads/nikolat/tama/total)](https://github.com/nikolat/tama/releases/latest)
+[![download num](https://img.shields.io/github/downloads/ukagaka-irono/tama-v6/total)](https://github.com/ukagaka-irono/tama-v6/releases/latest)
+[![download](https://img.shields.io/badge/download-ukagaka--irono.github.io-blue)](https://ukagaka-irono.github.io/tama-v6/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 
