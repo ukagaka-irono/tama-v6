@@ -22,7 +22,7 @@ BEGIN
         MENUITEM SEPARATOR
         MENUITEM "クリップボードにコピーする(&C)\tCtrl+C",   ID_TAMA_COPY
         MENUITEM SEPARATOR
-        MENUITEM "警告時のプロンプト(&W)",               32781
+        MENUITEM "警告時のプロンプト(&W)",               ID_TAMA_ALERTONWARNING
         MENUITEM "ログ受信(&V)",                    ID_TAMA_RECEIVE
         MENUITEM "SHIORIの所有権の自動譲渡無効",           ID_TAMA_DISABLE_AUTO_TRANSFER_SHIORI_OWNERSHIP
         MENUITEM SEPARATOR
